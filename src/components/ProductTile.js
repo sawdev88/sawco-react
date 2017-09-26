@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProductTile = (props) => {
   return (
-    <div className="product">
+    <div className={"product" + (props.small ? ' small' : '') }>
       <div className="image-container">
         <img src={ props.img } alt={ props.alt } />
       </div>

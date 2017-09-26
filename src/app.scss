@@ -52,6 +52,8 @@ ul {
 a {
   color: #000;
   transition: $ease;
+  text-decoration: none;
+  font-size: 1.5rem;
 
   &:hover {
     color: $blue;
@@ -106,6 +108,11 @@ hr {
   margin: 4rem 0;
 }
 
+.margin-top {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
 .flex-row {
   display: flex;
   justify-content: space-between;
@@ -141,11 +148,17 @@ hr {
   }
 
   &:hover {
-    //background: #efefef;
     border-radius: 5px;
 
     img {
       transform: scale(1.05);
+    }
+  }
+
+  &.small {
+    .image-container {
+      width: 20rem;
+      height: 12rem;
     }
   }
 }
@@ -246,6 +259,60 @@ hr {
   h3 {
     margin-bottom: 1rem;
   }
+}
+
+#footer {
+  height: 24rem;
+  padding-top: 6rem;
+
+  .legal-nonsense {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 1rem 4rem;
+    text-align: right;
+  }
+
+  label {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+
+  input {
+    width: 36rem;
+    font-size: 1.5rem;
+    padding: .5rem 1rem;
+    height: 3rem;
+    vertical-align: top;
+  }
+
+  button {
+    border: 1px solid rgba(0,0,0,.2);
+    background: #fff;
+    height: 3rem;
+    margin: 0;
+    vertical-align: top;
+  }
+}
+
+// Internal Pages
+#internal-banner {
+  background: url('./img/plant-2577864_1280.jpg') no-repeat left 75% / cover;
+  height: 40vh;
+  position: relative;
+}
+
+.internal-container {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.internal ~ #footer {
+  width: 100%;
+  left: 0;
 }
 
 // Media

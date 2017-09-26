@@ -9,24 +9,6 @@ class LandingNavigation extends Component {
     }
   }
 
-  // Scrollspy
-  scrollSpy(section) {
-    window.addEventListener('scroll', function () {
-      let position = window.pageYOffset,
-          commuterLocation = document.getElementById('commuter-section').offsetTop - 100;
-
-      // if ( position < 50 ) {
-      //   this.setState = { currentSection: '' }
-      // }
-
-      if (position < commuterLocation && position > 51 ) {
-        this.setState = { currentSection: 'about' }
-      }
-
-
-    });
-  }
-
   // Scroll to area
   scrollToArea(section) {
     let area = document.getElementById(section);
@@ -36,9 +18,17 @@ class LandingNavigation extends Component {
     });
   }
 
-  render() {
-    this.scrollSpy();
+  handleClick(section, index) {
+    let area = document.getElementById(section);
+    area.scrollIntoView({
+      behavior: 'smooth'
+    });
 
+    this.setState({ currentSection: index })
+  }
+
+  render() {
+    console.log(this.state.currentSection);
     return (
       <nav id="landing-navigation">
         <div className="logo">
@@ -46,11 +36,26 @@ class LandingNavigation extends Component {
         </div>
 
         <ul>
-          <li onClick={ () => this.scrollToArea('about') }>about</li>
-          <li onClick={ () => this.scrollToArea('commuter-section') }>commuter series</li>
-          <li onClick={ () => alert() } className="home-nav">home series</li>
-          <li onClick={ () => alert() } className="photo-nav">photo</li>
-          <li onClick={ () => alert() } className="blog-nav">blog</li>
+          <li className={ this.state.currentSection === 0 ? 'selected' : '' }
+              onClick={ () => this.handleClick('about', 0) }>
+              about
+          </li>
+          <li className={ this.state.currentSection === 1 ? 'selected' : '' }
+              onClick={ () => this.handleClick('commuter-section', 1) }>
+              commuter series
+          </li>
+          <li className={ this.state.currentSection === 2 ? 'selected' : '' }
+              onClick={ () => this.handleClick('home-section', 2) }>
+              home series
+          </li>
+          <li className={ this.state.currentSection === 3 ? 'selected' : '' }
+              onClick={ () => this.handleClick('photo-section', 3) }>
+              photo
+          </li>
+          <li className={ this.state.currentSection === 4 ? 'selected' : '' }
+              onClick={ () => this.handleClick('blog-section', 4) }>
+              blog
+          </li>
         </ul>
 
         <div className="bottom-area">
