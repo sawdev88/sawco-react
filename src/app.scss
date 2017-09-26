@@ -169,6 +169,7 @@ hr {
   height: 100%;
   padding: 4rem 2rem;
   border-right: 1px solid rgba(0,0,0,.05);
+  z-index: 1001;
 
   .border {
     padding-left: 1rem;
@@ -209,4 +210,21 @@ hr {
   a {
     margin-bottom: .75rem;
   }
+}
+
+// Sections
+#container,
+#footer {
+  position: relative;
+  left: 22%;
+  width: 78%;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+#landing-banner {
+  background: url('./img/plant-2577864_1280.jpg') no-repeat left center / cover;
+  height: 100vh;
+  text-align: center;
+  position: relative;
 }
