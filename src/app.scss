@@ -1,1 +1,212 @@
+// Varables
+$ease: .3s ease-in-out;
+$blue: #2791d4;
 
+h1, h2, h3, h4, h5, ul, li {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 1vw;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.75rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #000;
+  transition: $ease;
+
+  &:hover {
+    color: $blue;
+  }
+}
+
+li {
+  list-style: none;
+}
+
+hr {
+  opacity: .5;
+  width: 70%;
+}
+
+// Global
+.border {
+  border: .5rem solid #000;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.border {
+  border: .5rem solid #000;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.btn {
+  padding: .5rem 1.5rem;
+  border: 1px solid #000;
+  transition: $ease;
+
+  &:hover {
+    border-color: $blue;
+  }
+}
+
+.cover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.section-padding {
+  padding: 2rem 4rem;
+  margin: 4rem 0;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.hide-desktop {
+  display: none;
+}
+
+.product-container {
+  margin: 2rem 4rem;
+}
+
+.product {
+  margin: 1rem 0;
+  padding-bottom: 1rem;
+  position: relative;
+  transition: $ease;
+
+  .image-container {
+    position: relative;
+    width: 32rem;
+    height: 20rem;
+    overflow: hidden;
+    margin-bottom: .5rem
+  }
+
+  img {
+    max-width: 100%;
+    transition: $ease;
+  }
+
+  &:hover {
+    //background: #efefef;
+    border-radius: 5px;
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.product-round {
+  width: 14rem;
+  height: 14rem;
+  margin: 2rem 0;
+  border: .5rem solid #000;
+  border-radius: 50%;
+  position: relative;
+  transition: $ease;
+
+  &:hover {
+    color: $blue;
+    border-color: $blue;
+  }
+}
+
+
+// Nav
+#site-navigation {
+  width: 18%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding: 4rem 2rem;
+  border-right: 1px solid rgba(0,0,0,.05);
+
+  .border {
+    padding-left: 1rem;
+  }
+
+  .logo {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    margin-top: 3rem;
+  }
+
+  .selected {
+    a {
+      color: $blue;
+    }
+  }
+
+  .bottom-area {
+    position: fixed;
+    bottom: 1rem;
+    left: 2rem;
+    width: 18rem;
+    height: auto;
+
+    .fa {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      font-size: 2rem;
+      margin-top: 1rem;
+    }
+  }
+
+  a {
+    margin-bottom: .75rem;
+  }
+}
