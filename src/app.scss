@@ -8,6 +8,7 @@ h1, h2, h3, h4, h5, ul, li {
 }
 
 html {
+  scroll-behavior: smooth;
   font-size: 1vw;
 }
 
@@ -36,20 +37,25 @@ p {
   font-size: 1.25rem;
 }
 
-a {
-  display: inline-block;
+li {
   text-decoration: none;
   font-size: 1.5rem;
+  color: #000;
+  transition: $ease;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
   color: #000;
   transition: $ease;
 
   &:hover {
     color: $blue;
   }
-}
-
-li {
-  list-style: none;
 }
 
 hr {
@@ -111,7 +117,7 @@ hr {
   display: none;
 }
 
-.product-container {
+.product-list {
   margin: 2rem 4rem;
 }
 
@@ -161,13 +167,15 @@ hr {
 
 
 // Nav
-#site-navigation {
-  width: 18%;
+#landing-navigation {
+  width: 14%;
   position: fixed;
+  display: flex;
+  flex-direction: column;
   top: 0;
   left: 0;
-  height: 100%;
-  padding: 4rem 2rem;
+  bottom: 0;
+  padding: 4rem 2rem 1rem;
   border-right: 1px solid rgba(0,0,0,.05);
   z-index: 1001;
 
@@ -186,29 +194,29 @@ hr {
   }
 
   .selected {
-    a {
-      color: $blue;
-    }
+    border-left: .25rem solid #000;
+    padding-left: 1rem;
   }
 
   .bottom-area {
-    position: fixed;
-    bottom: 1rem;
-    left: 2rem;
-    width: 18rem;
-    height: auto;
+    margin-top: auto;
+    position: relative;
 
     .fa {
       position: absolute;
-      bottom: 0;
-      right: 0;
       font-size: 2rem;
-      margin-top: 1rem;
+      right: 0;
+      bottom: 0;
     }
   }
 
-  a {
+  li {
     margin-bottom: .75rem;
+
+    &:hover {
+      border-left: .25rem solid #000;
+      padding-left: 1rem;
+    }
   }
 }
 
@@ -216,10 +224,9 @@ hr {
 #container,
 #footer {
   position: relative;
-  left: 22%;
-  width: 78%;
+  left: 18%;
+  width: 82%;
   z-index: 1000;
-  overflow: hidden;
 }
 
 #landing-banner {
@@ -227,4 +234,105 @@ hr {
   height: 100vh;
   text-align: center;
   position: relative;
+}
+
+#about {
+  p {
+    padding: 1rem 6rem;
+  }
+}
+
+#photo {
+  h3 {
+    margin-bottom: 1rem;
+  }
+}
+
+// Media
+@media (max-width: 1000px) {
+  html { font-size: 1.25vw; }
+
+  .hamburger {
+    position: fixed;
+    right: 2rem;
+    top: 1rem;
+    z-index: 1001;
+    background: #fff;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  #landing-navigation {
+    width: 50vw;
+    left: -60vw;
+    z-index: 1001;
+    background: #fff;
+    transition: $ease;
+
+    &.show-nav {
+      left: 0;
+    }
+  }
+
+  #container,
+  #footer,
+  .tooltip {
+    left: 0;
+    width: 100%;
+  }
+
+  .product-list {
+    margin: 2rem 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  html { font-size: 3vw; }
+
+  .section-padding {
+    padding: 2rem;
+  }
+
+  .product-list {
+    margin: 2rem 0;
+    text-align: center;
+
+    .image-container {
+      width: 100%;
+      height: 20rem;
+    }
+  }
+
+  #banner {
+    color: #fff;
+  }
+
+  #side-nav {
+    width: 75vw;
+    left: -75vw;
+  }
+
+  #about {
+    p {
+      padding: 1rem;
+    }
+  }
+
+  #footer {
+    input {
+      width: 24rem;
+    }
+  }
 }

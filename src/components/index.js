@@ -1,7 +1,13 @@
-import SiteNavigation from './SiteNavigation';
+import LandingNavigation from './LandingNavigation';
 import LandingBanner from './LandingBanner';
+import PaddingSection from './PaddingSection';
+import ProductList from './ProductList';
+import ProductTile from './ProductTile';
 
 export {
-  SiteNavigation,
-  LandingBanner
+  LandingNavigation,
+  LandingBanner,
+  PaddingSection,
+  ProductList,
+  ProductTile
 }
