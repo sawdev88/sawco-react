@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { smoothScroll } from '../utility/Helpers';
 
 class LandingNavigation extends Component {
   constructor(props) {
@@ -7,28 +8,16 @@ class LandingNavigation extends Component {
     this.state = {
       currentSection: ''
     }
-  }
 
-  // Scroll to area
-  scrollToArea(section) {
-    let area = document.getElementById(section);
-    console.log(area);
-    area.scrollIntoView({
-      behavior: 'smooth'
-    });
+    //this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick(section, index) {
-    let area = document.getElementById(section);
-    area.scrollIntoView({
-      behavior: 'smooth'
-    });
-
+    smoothScroll(document.getElementById(section).offsetTop);
     this.setState({ currentSection: index })
   }
 
   render() {
-    console.log(this.state.currentSection);
     return (
       <nav id="landing-navigation">
         <div className="logo">
