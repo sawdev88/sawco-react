@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
 import { smoothScroll } from '../utility/Helpers';
+import Scrollspy from 'react-scrollspy';
 
 class LandingNavigation extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      position: window.pageYOffset,
       currentSection: ''
     }
-
-    //this.handleClick = this.handleClick.bind(this);
   }
 
+  // Smooth scroll to nav area
   handleClick(section, index) {
     smoothScroll(document.getElementById(section).offsetTop);
     this.setState({ currentSection: index })
   }
 
   render() {
+    const sections = ['about', 'commuter-section', 'home-section', 'photo-section', 'blog-section']
     return (
       <nav id="landing-navigation">
         <div className="logo">
           <h1 className="border">sawco.</h1>
         </div>
 
-        <ul>
+        <Scrollspy items={ sections } currentClassName='selected'>
           <li className={ this.state.currentSection === 0 ? 'selected' : '' }
               onClick={ () => this.handleClick('about', 0) }>
               about
@@ -45,7 +47,7 @@ class LandingNavigation extends Component {
               onClick={ () => this.handleClick('blog-section', 4) }>
               blog
           </li>
-        </ul>
+        </Scrollspy>
 
         <div className="bottom-area">
           <span>killin it since 2017</span>
